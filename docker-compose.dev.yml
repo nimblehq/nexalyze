@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16.3
+    container_name: google-scraper-web-db
+    environment:
+      - POSTGRES_DB=google_scraper_web_development
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7.0.9
+    container_name: google-scraper-web-redis
+    ports:
+      - "6379:6379"
